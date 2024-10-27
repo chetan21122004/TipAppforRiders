@@ -17,7 +17,7 @@ import { CreditCard } from '@mui/icons-material';
 
 export default function App() {
   const [tipAmount, setTipAmount] = useState(''); // Store the tip amount as a string
-  const [paymentMethod, setPaymentMethod] = useState('cash'); // Default payment method is cash
+  const [paymentMethod, setPaymentMethod] = useState('upi'); // Default payment method is cash
   const navigate = useNavigate(); // Use navigate from react-router
 
   // Function to handle tip selection
