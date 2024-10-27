@@ -11,9 +11,9 @@ import {
   FormLabel,
   Box
 } from '@mui/material';
-import Upi from './Upi.jsx';
+// import Upi from './Upi.jsx';
 import { CreditCard } from '@mui/icons-material';
-import QrPage from './QrPage'; // Import your QR page component
+// import QrPage from './QrPage'; // Import your QR page component
 
 export default function App() {
   const [tipAmount, setTipAmount] = useState(''); // Store the tip amount as a string
@@ -51,30 +51,30 @@ export default function App() {
   return (
     <div className="  bg-green-200 h-screen flex-col w-full flex items-center justify-center">
       <div className=' p-4 rounded-md  shadow-xl bg-gray-50 '>
-        <p className='text-2xl font-semibold text-center '>
-          A Small Tip to My Education!
-        </p>
-        <p className='text-center text-xl my-2 text-gray-600'>
-          Your kindness Makes Our Day!
-        </p>
+        <p className='text-2xl font-medium text-center '>
+        Happy Diwali to you & your Family!
+       </p>
+        <p className='text-center text-xl my-2 font-normal text-gray-600'>
+        Light Up My Diwali with a Small Tip!
+       </p>
 
         <div className="butn">
           <div className="but mb-3 gap-6 flex">
-            <button className="border-2 border-orange-400 font-bold py-2 px-8 hover:bg-blue-100 focus:bg-blue-500 rounded-md focus:text-white"
-              onClick={() => handleTipSelection(20)}>
-              ₹20
-            </button>
-            <button className=" border-2 border-blue-500 font-bold py-2 px-8 hover:bg-blue-100 focus:bg-blue-500 rounded-md focus:text-white"
+            <button className="border-2 border-orange-400 font-bold py-2 px-8 hover:bg-blue-100 focus:bg-orange-400 focus:border-slate-600 rounded-md focus:text-white"
               onClick={() => handleTipSelection(30)}>
               ₹30
             </button>
-            <button className="border-2 border-green-500 font-bold py-2 px-8 hover:bg-blue-100 focus:bg-blue-500 rounded-md focus:text-white"
+            <button className=" border-2 border-blue-500 font-bold py-2 px-8 hover:bg-blue-100 focus:bg-blue-500 focus:border-slate-600 rounded-md focus:text-white"
               onClick={() => handleTipSelection(50)}>
               ₹50
             </button>
+            <button className="border-2 border-green-500 font-bold py-2 px-8 hover:bg-blue-100 focus:bg-green-500 focus:border-slate-600 rounded-md focus:text-white"
+              onClick={() => handleTipSelection(100)}>
+              ₹100
+            </button>
           </div>
-          <button className="border-2 w-full border-red-600 font-bold py-2 px-4 hover:bg-blue-100 focus:bg-red-500 rounded-md focus:text-white">
-            Sorry, But Next time
+          <button className="border-2 w-full border-red-600 font-bold py-2 px-4 hover:bg-blue-100 focus:bg-red-500 focus:border-slate-600 rounded-md focus:text-white">
+            NA , But Next time
           </button>
         </div>
 
