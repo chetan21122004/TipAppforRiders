@@ -74,7 +74,7 @@ export default function App() {
 
   return (
     <div className="  bg-red-100 h-screen flex-col w-full flex items-center justify-center">
-      <div className=' p-4 bg-gray-50 rounded-md  shadow-xl '>
+      <div className=' p-4 bg-gray-100 rounded-md  shadow-xl '>
        <button className=' bg-red-500 w-full p-2 rounded-2xl text-white font-semibold text-xl' 
          
          onClick={toggleSanta} 
@@ -95,21 +95,21 @@ Spread some festive cheer with a small tip!
 
         <div className="butn">
           <div className="but mb-3 gap-6 flex">
-            <button className="border-2  font-bold py-2 px-8 hover:bg-red-100 focus:bg-red-500 focus:border-slate-600 rounded-md focus:text-white"
+            <button className="border-2 text-gray-700 font-bold py-2 px-8 hover:bg-red-100 focus:bg-red-500 focus:border-slate-600 rounded-md focus:text-white"
               onClick={() => handleTipSelection(30)}>
               ₹30
             </button>
-            <button className=" border-2  font-bold py-2 px-8 hover:bg-red-100 focus:bg-red-500 focus:border-slate-600 rounded-md focus:text-white"
+            <button className=" border-2 text-gray-700 font-bold py-2 px-8 hover:bg-red-100 focus:bg-red-500 focus:border-slate-600 rounded-md focus:text-white"
               onClick={() => handleTipSelection(50)}>
               ₹50
             </button>
-            <button className="border-2  font-bold py-2 px-8 hover:bg-red-100 focus:bg-red-500 focus:border-slate-600 rounded-md focus:text-white"
+            <button className="border-2 text-gray-700 font-bold py-2 px-8 hover:bg-red-100 focus:bg-red-500 focus:border-slate-600 rounded-md focus:text-white"
               onClick={() => handleTipSelection(100)}>
               ₹100
             </button>
           </div>
-          <button className="border-2 w-full font-bold py-2 px-4 hover:bg-red-100 focus:bg-red-500 focus:border-slate-600 rounded-md focus:text-white">
-            NA , But Next time
+          <button className="border-2 w-full font-medium text-gray-500 py-2 px-4 hover:bg-red-100 focus:bg-red-500 focus:border-slate-600 rounded-md focus:text-white">
+            Maybe Next Time
           </button>
         </div>
 
