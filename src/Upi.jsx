@@ -6,7 +6,7 @@ const Upi = ({ upiId, amount }) => {
   return (
     <div className="text-center p-1 w-full gap-5 flex items-center justify-center flex-col   rounded ">
       <h2 className="text-xl font-bold mb-2">Scan to Pay ₹{amount}</h2>
-      <QRCodeSVG className=' h-52 w-52  shadow-slate-500 shadow-lg' value={upiLink} />
+      <QRCodeSVG className=' h-52 w-52 bg-red-200   shadow' value={upiLink} />
     </div>
   );
 };

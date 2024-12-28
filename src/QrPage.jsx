@@ -8,7 +8,7 @@ const QrPage = () => {
   const navigate = useNavigate(); // Use navigate from react-router
 
   return (
-    <div className="flex items-center justify-center h-screen bg-green-200">
+    <div className="flex items-center justify-center h-screen bg-red-200">
        
       <div className="bg-gray-50 p-8 rounded-lg shadow-md">
       <button
