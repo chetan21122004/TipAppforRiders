@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState , useRef} from 'react';
 import {  useNavigate } from 'react-router-dom';
 import {
   
@@ -14,6 +14,7 @@ import {
 // import Upi from './Upi.jsx';
 import { CreditCard } from '@mui/icons-material';
 // import QrPage from './QrPage'; // Import your QR page component
+import { PlayArrow, Pause } from '@mui/icons-material'; // Import icons
 
 import santa from './assets/santa.wav'
 
@@ -21,6 +22,9 @@ export default function App() {
   const [tipAmount, setTipAmount] = useState(''); // Store the tip amount as a string
   const [paymentMethod, setPaymentMethod] = useState('upi'); // Default payment method is cash
   const navigate = useNavigate(); // Use navigate from react-router
+  const [isPlaying, setIsPlaying] = useState(false); // State to track if audio is playing
+  const santaAudioRef = useRef(new Audio(santa)); // Use a ref to keep the same instance
+
 
   // Function to handle tip selection
   const handleTipSelection = (amount) => {
@@ -28,8 +32,23 @@ export default function App() {
   };
 
   function playSanta() {
-    new Audio(santa).play();
+    santaAudioRef.current.play(); // Access the ref instance
   }
+
+  function pauseSanta() {
+    santaAudioRef.current.pause(); // Access the ref instance
+  }
+
+  function toggleSanta() {
+    if (isPlaying) {
+      pauseSanta();
+    } else {
+      playSanta();
+    }
+    setIsPlaying(!isPlaying);
+  }
+
+
   // Function to handle custom tip input
   const handleCustomTip = (e) => {
     const value = e.target.value; // Get the input value
@@ -58,10 +77,12 @@ export default function App() {
       <div className=' p-4 bg-gray-50 rounded-md  shadow-xl '>
        <button className=' bg-red-500 w-full p-2 rounded-2xl text-white font-semibold text-xl' 
          
-         onClick={playSanta} 
+         onClick={toggleSanta} 
        >
-         Message from Santa
+         {isPlaying ? <Pause /> : <PlayArrow />} {/* Toggle icon based on state */}
+         {isPlaying ? ' Pause from Santa' : ' Message from Santa'}
        </button>
+
        <div className=' w-4/5 text-center mx-auto'>
        
        <p className='text-xl font-bold text-red-600 text-center '>
