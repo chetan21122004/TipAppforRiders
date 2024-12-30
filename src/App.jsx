@@ -12,7 +12,6 @@ import {
   Box,
 } from '@mui/material';
 // import Upi from './Upi.jsx';
-import { CreditCard } from '@mui/icons-material';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 // import QrPage from './QrPage'; // Import your QR page component
 import { PlayArrow, Pause } from '@mui/icons-material'; // Import icons
@@ -94,10 +93,10 @@ setDisp('flex')      }
   return (
     <div className="  bg-blue-300 h-full flex-col w-full flex items-center justify-center">
 
-      <div className='bg-gray-100 rounded-md  shadow-xl  '>
+      <div className='bg-gray-50 rounded-md  shadow-xl  '>
 
 
-        <div className="top flex items-center justify-between  bg-white rounded-md w-full px-4 h-20">
+        <div className="top flex items-center border  justify-between  bg-white rounded-md w-full px-4 h-20">
           <img src={Dominos}  className=' rounded-md   h-full'/>
           {isEditing ? (
             <TextField
@@ -162,25 +161,25 @@ Spread some festive cheer with a small tip!
 
         <div className="butn ">
           <div className="but mb-3 gap-6 flex transition-all  ">
-            <button className="border-2 text-gray-700 font-bold py-2 px-8 hover:bg-blue-100 focus:bg-blue-500 focus:border-slate-400 rounded-md focus:text-white"
+            <button className="border-2 bg-white text-gray-700 font-bold py-2 px-8 hover:bg-blue-100 focus:bg-blue-500 focus:border-slate-400 rounded-md focus:text-white"
               onClick={() => handleTipSelection(30)}>
               ₹30
             </button>
-            <button className=" border-2 text-gray-700 font-bold py-2 px-8 hover:bg-blue-100 focus:bg-blue-500 focus:border-slate-400 rounded-md focus:text-white"
+            <button className=" border-2 bg-white text-gray-700 font-bold py-2 px-8 hover:bg-blue-100 focus:bg-blue-500 focus:border-slate-400 rounded-md focus:text-white"
               onClick={() => handleTipSelection(50)}>
               ₹50
             </button>
-            <button className="border-2 text-gray-700 font-bold py-2 px-8 hover:bg-blue-100 focus:bg-blue-500 focus:border-slate-400 rounded-md focus:text-white"
+            <button className="border-2 bg-white text-gray-700 font-bold py-2 px-8 hover:bg-blue-100 focus:bg-blue-500 focus:border-slate-400 rounded-md focus:text-white"
               onClick={() => handleTipSelection(100)}>
               ₹100
             </button>
           </div>
-          <button className="border-2 w-full font-medium text-gray-500 py-2 px-4 hover:bg-blue-100 focus:bg-red-500 focus:border-slate-600 rounded-md focus:text-white">
+          <button className="border-2 bg-white w-full font-medium text-gray-500 py-2 px-4 hover:bg-blue-100 focus:bg-red-500 focus:border-slate-600 rounded-md focus:text-white">
             Maybe Next Time
           </button>
         </div>
 
-        <div className="flex my-5">
+        <div className="flex bg-white my-5">
           <TextField
             label="Custom Amount"
             variant="outlined"
