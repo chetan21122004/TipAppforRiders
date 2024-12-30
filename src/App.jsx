@@ -97,8 +97,8 @@ setDisp('flex')      }
       <div className='bg-gray-100 rounded-md  shadow-xl  '>
 
 
-        <div className="top flex items-center justify-between bg-white rounded-md w-full px-4 h-24">
-          <img src={Dominos}  className=' rounded-md pb-2  h-full'/>
+        <div className="top flex items-center justify-between  bg-white rounded-md w-full px-4 h-20">
+          <img src={Dominos}  className=' rounded-md   h-full'/>
           {isEditing ? (
             <TextField
               value={orderNumber}
@@ -108,7 +108,7 @@ setDisp('flex')      }
               size="small"
             />
           ) : (
-            <p className=' text-xl font-medium text-gray-500' onClick={handleOrderNumberClick}>
+            <p className=' text-xl mt-4 font-medium text-gray-500' onClick={handleOrderNumberClick}>
               Order no:{orderNumber}
             </p>
           )}
