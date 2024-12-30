@@ -92,7 +92,7 @@ setDisp('flex')      }
   };
 
   return (
-    <div className="  bg-blue-300 h-full pt-10 flex-col w-full flex items-center justify-center">
+    <div className="  bg-blue-300 h-full flex-col w-full flex items-center justify-center">
 
       <div className='bg-gray-100 rounded-md  shadow-xl  '>
 
