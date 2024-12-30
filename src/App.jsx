@@ -13,6 +13,7 @@ import {
 } from '@mui/material';
 // import Upi from './Upi.jsx';
 import { CreditCard } from '@mui/icons-material';
+import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 // import QrPage from './QrPage'; // Import your QR page component
 import { PlayArrow, Pause } from '@mui/icons-material'; // Import icons
 import HoverRating from './HoverRating';
@@ -24,9 +25,10 @@ import QrPage from './QrPage';
 export default function App() {
   const [tipAmount, setTipAmount] = useState(''); // Store the tip amount as a string
   const [paymentMethod, setPaymentMethod] = useState('upi'); // Default payment method is cash
-  const navigate = useNavigate(); // Use navigate from react-router
   const [isPlaying, setIsPlaying] = useState(false); // State to track if audio is playing
   const santaAudioRef = useRef(new Audio(santa)); // Use a ref to keep the same instance
+  const [isEditing, setIsEditing] = useState(false); // State to track editing mode
+  const [orderNumber, setOrderNumber] = useState('#123'); // State for order number
 
   const [disp, setDisp] = useState('hidden')
   // Function to handle tip selection
@@ -74,6 +76,21 @@ setDisp('flex')      }
   };
   
 
+  // Function to handle order number click
+  const handleOrderNumberClick = () => {
+    setIsEditing(true); // Enable editing mode
+  };
+
+  // Function to handle order number change
+  const handleOrderNumberChange = (e) => {
+    setOrderNumber(e.target.value); // Update order number
+  };
+
+  // Function to handle blur event (when input loses focus)
+  const handleBlur = () => {
+    setIsEditing(false); // Disable editing mode
+  };
+
   return (
     <div className="  bg-blue-300 h-full pt-10 flex-col w-full flex items-center justify-center">
 
@@ -82,7 +99,19 @@ setDisp('flex')      }
 
         <div className="top flex items-center justify-between bg-white rounded-md w-full px-4 h-24">
           <img src={Dominos}  className=' rounded-md pb-2  h-full'/>
-          <p className=' text-xl font-medium text-gray-500'>Order no:#123</p>
+          {isEditing ? (
+            <TextField
+              value={orderNumber}
+              onChange={handleOrderNumberChange}
+              onBlur={handleBlur} // Disable editing on blur
+              variant="outlined"
+              size="small"
+            />
+          ) : (
+            <p className=' text-xl font-medium text-gray-500' onClick={handleOrderNumberClick}>
+              Order no:{orderNumber}
+            </p>
+          )}
         </div>
 
 
@@ -100,7 +129,10 @@ setDisp('flex')      }
 
 
       
-      
+        <p className='text-xl mb-3 w-4/5 mx-auto font-bold text-red-500 text-center '>
+        Merry Christmas & Happy New Year!
+       </p>
+
        <button className=' bg-red-500 w-full p-2 rounded-2xl text-white font-semibold text-xl' 
          
          onClick={toggleSanta} 
@@ -111,13 +143,10 @@ setDisp('flex')      }
 
        <div className=' w-4/5 text-center mx-auto'>
        
-       <p className='text-xl font-bold text-red-500 text-center '>
-        Merry Christmas & Happy New Year!
-       </p>
+      
+      <div className='Rating my-1'>
 
-      <div className='Rating'>
-
-      <p className=' text-xl font-semibold'>
+      <p className=' text-xl font-normal'>
         Rate Your Experience
       </p>
       <div className='RatingCompo flex items-center justify-center'>
@@ -185,7 +214,7 @@ Spread some festive cheer with a small tip!
               control={<Radio />} 
               label={
                 <Box display="flex" alignItems="center" >
-                  <CreditCard  className=' text-blue-500  ' /> 
+                  <PhoneAndroidIcon  className=' text-blue-500  ' /> 
                   <p className='  ml-1 font-semibold text-gray-500'>UPI</p>
                 </Box>
               } 
@@ -194,7 +223,7 @@ Spread some festive cheer with a small tip!
         </FormControl>
 
         <CardActions>
-          <button className=' bg-red-500 w-full p-2 rounded-2xl text-white font-semibold text-xl' 
+          <button className=' bg-blue-500 w-full p-2 border border-gray-500 rounded-2xl text-white font-semibold text-xl' 
          
             onClick={handleConfirm} 
           >
